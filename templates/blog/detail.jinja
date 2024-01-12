@@ -1,0 +1,25 @@
+{% extends 'layout.jinja' %}
+{% block title %}{{article.title}}{% endblock %}
+
+{% block content %}
+<div class="container detail">
+    <h1>{{article.title}}</h1><hr>
+    <p>
+        {{article.content|safe}}
+    </p>
+    <span class="text-secondary">Edited at {{article.edited_at}}</span>
+    <br><span class="text-secondary">By {{article.author}}</span>
+
+    <br><br>
+
+    <div class="comments">
+        <h3>Comments</h3>
+        {% for comment in comments %}
+        <span id="comment">
+            {{comment.comment}}
+            <div class="text-muted">~ {{comment.author}}</div>
+        </span><br> 
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

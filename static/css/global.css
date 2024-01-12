@@ -1,0 +1,11 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+}

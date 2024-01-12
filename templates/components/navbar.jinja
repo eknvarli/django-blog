@@ -1,0 +1,20 @@
+{% load category_list %}
+{% category_list as categories %}
+
+<div class="container">
+    <h1 align="center"><a href="/">Blog App</a></h1>
+    {% if request.user.is_authenticated %}
+    Welcome, <strong>{{request.user}}</strong>
+    {% else %}
+    You are not logged in.
+    {% endif %}
+    <br>
+    <strong>Categories</strong>
+    {% for category in categories %}
+    <li>{{category}}</li>
+    {% endfor %}
+    <form action="{% url 'index' %}" class="d-flex">
+        <input class="form-control" name="search" type="search" placeholder="Search article">
+    </form>
+    <hr>
+</div>
