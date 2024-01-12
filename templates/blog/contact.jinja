@@ -3,6 +3,15 @@
 {% block title %}Contact{% endblock %}
 {% block content %}
 
-<h2>Contact Page</h2>
+<div class="container">
+    <h2>Contact Page</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{form}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 
 {% endblock %}
