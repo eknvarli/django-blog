@@ -1,0 +1,13 @@
+{% extends 'layout.jinja' %}
+
+{% block title %}Signup{% endblock %}
+{% block content %}
+<div class="container">
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{form.media}}
+        {{form}}
+        <button type="submit" class="btn btn-primary">Signup</button>
+    </form>
+</div>
+{% endblock %}

@@ -4,9 +4,13 @@
 <div class="container">
     <h1 align="center"><a href="/">Blog App</a></h1>
     {% if request.user.is_authenticated %}
-    Welcome, <strong>{{request.user}}</strong>
+    Welcome, <strong>{{request.user}}</strong> &nbsp;&nbsp; <a href="{% url 'logout' %}">Logout</a>
+    &nbsp; &nbsp; <a href="{% url 'change' %}">Change Password</a>
+    &nbsp; &nbsp; <a href="{% url 'editprofile' %}">Edit Profile</a>
     {% else %}
     You are not logged in.
+    &nbsp; &nbsp; <a href="{% url 'signup' %}">Signup</a>
+    &nbsp; &nbsp; <a href="{% url 'login' %}">Login</a>
     {% endif %}
     <br>
     <strong>Categories</strong>
